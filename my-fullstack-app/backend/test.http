@@ -1,0 +1,52 @@
+### ============================================
+### EMPLOYEE DIRECTORY API TESTS
+### Backend: http://localhost:5000
+### ============================================
+
+###1. GET ALL EMPLOYEES
+GET http://localhost:5000/api/employees
+
+
+###2. GET EMPLOYEE BY DEPARTMENT
+##FILTER: Marketing
+GET http://localhost:5000/api/employees?department=Marketing
+
+###FILTER: Sales
+GET http://localhost:5000/api/employees?department=Sales
+
+
+
+###3. ADD NEW EMPLOYEE
+POST http://localhost:5000/api/employees
+Content-Type: application/json
+
+{
+  "id": 24,
+  "name": "Test",
+  "surname": "User",
+  "gender": "Male",
+  "department": "Engineering",
+  "salary": 75000
+}
+
+
+
+###4. UPDATE EMPLOYEE 16
+### REPLACE salary = 95000, depatment = Marketing
+PUT http://localhost:5000/api/employees/16
+Content-Type: application/json 
+
+{
+    "salary": 95000,
+    "department": "Marketing"
+
+}
+
+
+
+### 8. DELETE EMPLOYEE
+### Replace 21 with actual employee ID
+DELETE http://localhost:5000/api/employees/21
+
+
+
